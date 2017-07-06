@@ -1,0 +1,49 @@
+<div class="row">
+    <h1 class="page" align="center">
+        Add User: 
+    </h1>
+    <table width="30%" align="center" >
+        <tr> <td>
+                <form ng-submit="addUser()">
+                    <div class="form-group">
+                        <label>FirstName:</label>
+                        <input type="text" ng-model="account.firstname" class="form-control" />
+                    </div>
+                    <div class="form-group" >
+                        <label>LastName:</label>                        
+                        <input type="lastname" ng-model="account.lastname" class="form-control" /><br/>
+                        <button class="btn btn-success" type="submit">Save</button>
+                        
+                    </div>
+
+                </form>
+            </td></tr>
+    </table>
+
+
+    <div ng-controller="RetrieveuserCtrl">
+        <table align="center">
+            <tr>
+                <td></td>
+                <td>
+                    <input id="fName" type="hidden" data-ng-model="enteredValue" value="dummy"/> 
+                    <button data-ng-click='clickButton(enteredValue)'  >Retrieve Users</button>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <table class="table table-bordered"  style="text-align: center">
+            <th style="text-align: center">Number</th>
+            <th style="text-align: center">FirstName</th>
+            <th style="text-align: center">LastName</th>
+
+            <tr ng-repeat="result in results" >
+                <td data-title="rid">{{result.rid}}</td>
+                <td data-title="firstname" >{{result.firstname}}</td>
+                <td data-title="lastname">{{result.lastname}}</td>
+            </tr>
+
+        </table>  
+    </div>
+</div>
+
